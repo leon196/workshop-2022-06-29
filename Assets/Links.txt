@@ -1,0 +1,28 @@
+
+
+tutorials
+https://catlikecoding.com/unity/tutorials/
+https://www.ronja-tutorials.com/
+
+built in shader variables
+https://docs.unity3d.com/Manual/SL-UnityShaderVariables.html
+
+image filter
+https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnRenderImage.html
+
+HLSL
+https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/dx-graphics-hlsl-intrinsic-functions
+
+surface shader examples
+https://docs.unity3d.com/Manual/SL-SurfaceShaderExamples.html
+
+grab pass
+https://docs.unity3d.com/Manual/SL-GrabPass.html
+
+alpha
+https://docs.unity3d.com/Manual/SL-Blend.html
+
+https://docs.unity3d.com/Manual/SL-VertexProgramInputs.html
+https://docs.unity3d.com/Manual/SL-VertexFragmentShaderExamples.html
+https://docs.unity3d.com/Manual/built-in-shader-examples-vertex-data.html
+https://docs.unity3d.com/Manual/SL-ShaderSemantics.html
