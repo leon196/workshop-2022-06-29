@@ -38,14 +38,25 @@ Shader "Leon/Vertex Displacement"
             {
                 varying o;
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
-                v.position.y += tex2Dlod(_MainTex, float4(o.uv, 0, 0)).r * _Height;
+                float travel1 = _Time.y * 0.01;
+                float travel2 = _Time.y * -0.02;
+                float lengthXZ = length(v.position.xz);
+                v.position.y += tex2Dlod(_MainTex, float4(o.uv+travel1, 0, 0)).r * _Height;
+                v.position.y += tex2Dlod(_MainTex, float4(o.uv+travel2, 0, 0)).r * _Height;
+                v.position.y += sin(_Time.y + lengthXZ * 4.) * .1;
+                float angle = atan2(v.position.z, v.position.x);
+                angle += sin(_Time.y + lengthXZ * 4.) * .1;
+                v.position.xz = float2(cos(angle),sin(angle)) * lengthXZ;
                 o.position = UnityObjectToClipPos(v.position);
                 return o;
             }
 
             fixed4 frag (varying i) : SV_Target
             {
-                fixed4 color = tex2D(_MainTex, i.uv) * _Color;
+                float travel1 = _Time.y * 0.01;
+                float travel2 = _Time.y * -0.02;
+                fixed4 color = tex2D(_MainTex, i.uv+travel1) * _Color;
+                color += tex2D(_MainTex, i.uv+travel2) * _Color;
                 return color;
             }
             ENDCG
